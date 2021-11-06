@@ -1,0 +1,220 @@
+/*
+    font-family: "Poppins", sans-serif;
+    font-family: "Prompt", sans-serif;
+*/
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Prompt", sans-serif;
+  color: white;
+}
+
+body {
+  height: 100vh;
+  background: -webkit-gradient(linear, left top, left bottom, from(#262626), to(#0d0d0d)) no-repeat;
+  background: linear-gradient(#262626, #0d0d0d) no-repeat;
+}
+
+.player {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 30px;
+}
+
+.player .playing {
+  width: 100%;
+  margin-top: 10px;
+  background-image: black;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.player .playing .controls {
+  padding: 5px 5px 5px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-backdrop-filter: blur(15px) brightness(50%);
+          backdrop-filter: blur(15px) brightness(50%);
+}
+
+.player .playing .controls .play-background {
+  width: 15%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid white;
+  border-radius: 50%;
+  margin: 10px;
+  padding: 2.5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player .playing .controls .play,
+.player .playing .controls .pause {
+  width: 100%;
+}
+
+.player .playing .controls .play {
+  content: url("../images/icons/play.png");
+}
+
+.player .playing .controls .pause {
+  content: url("../images/icons/pause.png");
+}
+
+.player .playing .controls .player-info {
+  padding: 5px;
+  text-align: center;
+}
+
+.player .playing .controls .player-info .title {
+  font-size: 18px;
+}
+
+.player .playing .controls .player-info .timeline {
+  margin-top: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player .playing .controls .player-info .timeline input[type="range"] {
+  width: 100%;
+  height: 4px;
+  -webkit-appearance: none;
+  background: transparent;
+}
+
+.player .playing .controls .player-info .timeline input[type="range"]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: var(--bg-color, white);
+  border-radius: 50px;
+}
+
+.player .playing .controls .player-info .timeline input[type="range"]::-webkit-slider-thumb {
+  width: 12px;
+  height: 12px;
+  -webkit-appearance: none;
+  cursor: pointer;
+  background: white;
+  border-radius: 50%;
+  margin-top: -4px;
+}
+
+.player .playing .controls .player-info .timeline .currenttime,
+.player .playing .controls .player-info .timeline .duration {
+  width: 10%;
+  margin: 0 5px;
+  font-size: 12px;
+}
+
+.player .playing .controls .player-info .timeline .next-background,
+.player .playing .controls .player-info .timeline .volume-background {
+  width: 5%;
+  margin: 0 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.player .playing .controls .player-info .timeline .next {
+  width: 100%;
+  content: url("../images/icons/next.png");
+}
+
+.player .playing .controls .player-info .timeline .volume {
+  width: 100%;
+  content: url("../images/icons/volume.png");
+}
+
+.player .playing .controls .player-info .timeline .volume-wrapper {
+  position: relative;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.player .playing .controls .player-info .timeline .volume-wrapper #volume {
+  vertical-align: middle;
+}
+
+.player .playing .controls .player-info .timeline .volume-wrapper #volume:hover + .volume-tooltip {
+  opacity: 1;
+}
+
+.player .playing .controls .player-info .timeline .volume-wrapper .volume-tooltip {
+  opacity: 0;
+  position: absolute;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+  top: -100%;
+}
+
+.player .playing .controls .player-info .timeline .volume-wrapper .volume-tooltip:hover {
+  opacity: 1;
+}
+
+.player .playing .controls .player-info .timeline .volume-wrapper .volume-tooltip span {
+  width: 30px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  background: radial-gradient(circle, #262626, #0d0d0d);
+  color: white;
+  font-size: 12px;
+  display: block;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  border-radius: 6px;
+}
+
+.player .playing .controls #volume {
+  width: 100px;
+}
+
+.player .playlist {
+  background: radial-gradient(circle, #262626, #0d0d0d);
+}
+
+.player .playlist ul {
+  padding: 0 10px;
+}
+
+.player .playlist ul li {
+  list-style-type: none;
+  border-bottom: 1px solid #262626;
+  margin: 15px 0;
+}
+/*# sourceMappingURL=style.css.map */

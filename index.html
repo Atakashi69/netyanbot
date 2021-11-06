@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Prompt:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles/style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/comfy.js@latest/dist/comfy.min.js"></script>
+        <script src="https://www.youtube.com/iframe_api"></script>
+    </head>
+    <body>
+        <div class="player">
+            <div id="YTPlayer"></div>
+            <div class="playing">
+                <div class="controls">
+                    <div id="btn-play" class="play-background">
+                        <img class="play" />
+                    </div>
+                    <div class="player-info">
+                        <div id="playing-title" class="title">
+                            Current Song Title
+                        </div>
+                        <div class="timeline">
+                            <p class="currenttime"></p>
+                            <input
+                                type="range"
+                                id="progress"
+                                min="0"
+                                max="100"
+                                value="0"
+                                step="any"
+                            />
+                            <p class="duration"></p>
+
+                            <div id="btn-next" class="next-background">
+                                <img class="next" />
+                            </div>
+                            <div class="volume-background">
+                                <img class="volume" />
+                            </div>
+                            <div class="volume-wrapper">
+                                <input
+                                    type="range"
+                                    id="volume"
+                                    min="0"
+                                    max="100"
+                                    value="10"
+                                    step="1"
+                                />
+                                <div class="volume-tooltip"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="playlist">
+                <ul id="playlist-ul">
+                    List of songs
+                </ul>
+            </div>
+        </div>
+
+        <script src="scripts/style.js"></script>
+        <script src="scripts/netyanbot.js"></script>
+        <script src="scripts/YTPlayer.js"></script>
+        <script src="scripts/songRequests.js"></script>
+    </body>
+</html>
