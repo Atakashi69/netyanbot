@@ -1,6 +1,5 @@
 var player, progressTimer;
 var playlist = [];
-playlist.push("ouSJqcqi78A");
 const inputProgress = document.getElementById("progress");
 const btnPlay = document.getElementById("btn-play");
 const btnPrev = document.getElementById("btn-prev");
