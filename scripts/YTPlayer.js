@@ -55,6 +55,7 @@ function onPlayerStateChange(eve) {
     }
     if (eve.data == YT.PlayerState.ENDED) {
         playlist.shift();
+        saveSettings();
         if (playlist.length > 0) {
             player.loadVideoById(playlist[0]);
             updateList();
@@ -112,6 +113,7 @@ btnNext.addEventListener("click", () => {
     if (playlist.length > 1) {
         player.loadVideoById(playlist[1]);
         playlist.shift();
+        saveSettings();
         updateList();
     }
 });
@@ -125,10 +127,16 @@ inputVolume.addEventListener("input", () => {
 
 function saveSettings() {
     setCookie("volume", inputVolume.valueAsNumber, {
-        expires: "Tue, 19 Jan 2038 00:00:00 GMT",
+        expires: "Fri, 1 Jan 2077 00:00:00 GMT",
+    });
+    setCookie("playlist", JSON.stringify(playlist), {
+        expires: "Fri, 1 Jan 2077 00:00:00 GMT",
     });
 }
 
 function loadSettings() {
     inputVolume.value = getCookie("volume");
+    if (getCookie("playlist")) {
+        playlist = JSON.parse(getCookie("playlist"));
+    }
 }
