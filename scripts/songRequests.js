@@ -21,6 +21,7 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
         var regExp = /youtube.com\S+|youtu.be\S+/;
         message = message.match(regExp).pop();
         playlist.push(getYTIDFromUrl(message));
+        saveSettings();
         updateList();
         if (playlist.length == 1) {
             player.loadVideoById(playlist[0]);
