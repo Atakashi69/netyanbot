@@ -20,12 +20,51 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
     if (flags.customReward && extra.customRewardId === rewardId) {
         var regExp = /youtube.com\S+|youtu.be\S+/;
         message = message.match(regExp).pop();
-        playlist.push(getYTIDFromUrl(message));
-        saveSettings();
-        updateList();
-        if (playlist.length == 1) {
-            player.loadVideoById(playlist[0]);
-            player.playVideo();
-        }
+        addSong(getYTIDFromUrl(message), user);
     }
 };
+
+async function addSong(YTID, username) {
+    try {
+        await fetchAsync(
+            `https://www.googleapis.com/youtube/v3/videos?id=${YTID}&part=contentDetails&key=${GAPIKey}`
+        ).then((response) => {
+            if (
+                YTDurationToSeconds(
+                    response.items[0].contentDetails.duration
+                ) <= 300
+            ) {
+                playlist.push(YTID);
+                updateList();
+                saveSettings();
+                if (playlist.length == 1) {
+                    player.loadVideoById(playlist[0]);
+                    player.playVideo();
+                }
+            } else {
+                ComfyJS.Say(
+                    `@${username} трек не был добавлен в плейлист т.к. его длительность превышает 5 минут`
+                );
+            }
+        });
+    } catch (e) {
+        console.log(e);
+        throw e;
+    }
+}
+
+function YTDurationToSeconds(duration) {
+    var match = duration.match(/PT(\d+H)?(\d+M)?(\d+S)?/);
+
+    match = match.slice(1).map(function (x) {
+        if (x != null) {
+            return x.replace(/\D/, "");
+        }
+    });
+
+    var hours = parseInt(match[0]) || 0;
+    var minutes = parseInt(match[1]) || 0;
+    var seconds = parseInt(match[2]) || 0;
+
+    return hours * 3600 + minutes * 60 + seconds;
+}
