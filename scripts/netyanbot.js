@@ -3,6 +3,7 @@ const OAUTH = "oauth:qnljd4uyt6fw095o57u8bvdsfix0ml";
 const rewardId = "799efafa-9b2c-4c80-93fb-a6ed8659e66f";
 
 if (!JSON.parse(getCookie("connected"))) {
+    console.log("connecting");
     ComfyJS.Init(TWITCHUSER, OAUTH);
     setCookie("connected", true);
 } else {
