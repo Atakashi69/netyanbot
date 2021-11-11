@@ -55,7 +55,6 @@ function onPlayerStateChange(eve) {
     }
     if (eve.data == YT.PlayerState.ENDED) {
         playlist.shift();
-        saveSettings();
         if (playlist.length > 0) {
             player.loadVideoById(playlist[0]);
             updateList();
@@ -63,6 +62,7 @@ function onPlayerStateChange(eve) {
             player.stopVideo();
             player.clearVideo();
         }
+        saveSettings();
     }
 }
 
@@ -113,8 +113,8 @@ btnNext.addEventListener("click", () => {
     if (playlist.length > 1) {
         player.loadVideoById(playlist[1]);
         playlist.shift();
-        saveSettings();
         updateList();
+        saveSettings();
     }
 });
 
