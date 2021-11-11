@@ -2,7 +2,12 @@ const TWITCHUSER = "netyann";
 const OAUTH = "oauth:qnljd4uyt6fw095o57u8bvdsfix0ml";
 const rewardId = "799efafa-9b2c-4c80-93fb-a6ed8659e66f";
 
-ComfyJS.Init(TWITCHUSER, OAUTH);
+if (!getCookie("connected")) {
+    ComfyJS.Init(TWITCHUSER, OAUTH);
+    setCookie("connected", true);
+} else {
+    console.log("already connected");
+}
 
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "кусь" || command == "bite") biteRandomUser(user);
