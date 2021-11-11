@@ -10,7 +10,6 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 };
 
 async function biteRandomUser(user) {
-    console.log(user);
     try {
         await (
             await fetch(`https://decapi.me/twitch/random_user/${TWITCHUSER}`)
