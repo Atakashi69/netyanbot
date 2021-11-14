@@ -9,6 +9,10 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "horny" || command == "хорни") hornyMeter(user);
 };
 
+ComfyJS.onRaid = (user, viewers, extra) => {
+    ComfyJS.Say(`Всем рейдерам @${user} ку netyanLove`);
+};
+
 setInterval(() => {
     ComfyJS.Say("BearDuck");
 }, 60000 * 15);
