@@ -19,8 +19,15 @@ async function fetchAsync(url) {
 ComfyJS.onChat = (user, message, flags, self, extra) => {
     if (flags.customReward && extra.customRewardId === rewardId) {
         var regExp = /youtube.com\S+|youtu.be\S+/;
-        message = message.match(regExp).pop();
-        addSong(getYTIDFromUrl(message), user);
+        var filter = message.match(regExp);
+        if (filter != null) {
+            message = filter.pop();
+            addSong(getYTIDFromUrl(message), user);
+        } else {
+            ComfyJS.Say(
+                `@${user} -> Трек не был добавлен в очередь, Вы не скинули правильную ссылку`
+            );
+        }
     }
 };
 
