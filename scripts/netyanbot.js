@@ -10,7 +10,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
-    ComfyJS.Say(`Всем рейдерам @${user} ку netyanLove`);
+    ComfyJS.Say(`Спасибо за рейд! Всем рейдерам привет netyanLove`);
 };
 
 var bearduckInterval = setInterval(() => {
