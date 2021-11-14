@@ -41,9 +41,17 @@ async function addSong(YTID, username) {
                     player.loadVideoById(playlist[0]);
                     player.playVideo();
                 }
+                console.log(playlist);
+                fetchAsync(
+                    `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${YTID}&key=${GAPIKey}`
+                ).then((result) => {
+                    ComfyJS.Say(
+                        `@${username} -> "${result.items[0].snippet.title}" был добавлен в очередь на позицию #${playlist.length}`
+                    );
+                });
             } else {
                 ComfyJS.Say(
-                    `@${username} трек не был добавлен в плейлист т.к. его длительность превышает 5 минут`
+                    `@${username} -> Трек не был добавлен в очередь т.к. его длительность превышает 5 минут`
                 );
             }
         });
