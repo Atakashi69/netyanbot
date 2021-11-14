@@ -25,7 +25,7 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
             addSong(getYTIDFromUrl(message), user);
         } else {
             ComfyJS.Say(
-                `@${user} -> Трек не был добавлен в очередь, Вы не скинули правильную ссылку`
+                `@${user} -> Трек не был добавлен в очередь, Вы скинули неправильную ссылку`
             );
         }
     }
