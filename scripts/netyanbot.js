@@ -13,7 +13,7 @@ ComfyJS.onRaid = (user, viewers, extra) => {
     ComfyJS.Say(`Всем рейдерам @${user} ку netyanLove`);
 };
 
-setInterval(() => {
+var bearduckInterval = setInterval(() => {
     ComfyJS.Say("BearDuck");
 }, 60000 * 15);
 
