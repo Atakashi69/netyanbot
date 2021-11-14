@@ -9,6 +9,10 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "horny" || command == "хорни") hornyMeter(user);
 };
 
+setInterval(() => {
+    ComfyJS.Say("BearDuck");
+}, 60000 * 15);
+
 async function biteRandomUser(user) {
     try {
         await (
