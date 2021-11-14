@@ -7,6 +7,7 @@ ComfyJS.Init(TWITCHUSER, OAUTH);
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "кусь" || command == "bite") biteRandomUser(user);
     if (command == "horny" || command == "хорни") hornyMeter(user);
+    if (command == "song") currentSong(user);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -39,6 +40,20 @@ function hornyMeter(user) {
     ComfyJS.Say(
         `${user} хорни на ${horny}% ${horny > 50 ? "BOOBA" : "peepoShy"}`
     );
+}
+
+async function currentSong(user) {
+    if (playlist.length <= 0) return;
+    try {
+        await fetchAsync(
+            `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${playlist[0]}&key=${GAPIKey}`
+        ).then((result) => {
+            ComfyJS.Say(`@${user} -> ${result.items[0].snippet.title}`);
+        });
+    } catch (e) {
+        console.log(e);
+        throw e;
+    }
 }
 
 function setCookie(name, value, options = {}) {

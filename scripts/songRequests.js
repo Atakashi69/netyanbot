@@ -31,7 +31,7 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
     }
 };
 
-async function addSong(YTID, username) {
+async function addSong(YTID, user) {
     try {
         await fetchAsync(
             `https://www.googleapis.com/youtube/v3/videos?id=${YTID}&part=contentDetails&key=${GAPIKey}`
@@ -53,12 +53,12 @@ async function addSong(YTID, username) {
                     `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${YTID}&key=${GAPIKey}`
                 ).then((result) => {
                     ComfyJS.Say(
-                        `@${username} -> "${result.items[0].snippet.title}" был добавлен в очередь на позицию #${playlist.length}`
+                        `@${user} -> "${result.items[0].snippet.title}" был добавлен в очередь на позицию #${playlist.length}`
                     );
                 });
             } else {
                 ComfyJS.Say(
-                    `@${username} -> Трек не был добавлен в очередь т.к. его длительность превышает 5 минут`
+                    `@${user} -> Трек не был добавлен в очередь т.к. его длительность превышает 5 минут`
                 );
             }
         });
