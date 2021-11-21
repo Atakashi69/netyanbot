@@ -15,7 +15,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
-    ComfyJS.Say(`Спасибо за рейд! Всем рейдерам привет netyanLove`);
+    ComfyJS.Say(`Спасибо за рейд! Всем рейдерам привет netyanAyayaka`);
 };
 
 var bearduckInterval = setInterval(() => {
