@@ -11,6 +11,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         else biteUser(user, message);
     }
     if (command == "horny" || command == "хорни") hornyMeter(user);
+    if (command == "wings" || command == "крылья" || command == "kfc" || command == "кфс") wings(user);
     if (command == "song") currentSong(user);
 };
 
@@ -48,6 +49,10 @@ async function biteRandomUser(user) {
 function hornyMeter(user) {
     var horny = Math.floor(Math.random() * 101);
     ComfyJS.Say(`${user} хорни на ${horny}% ${horny > 50 ? "BOOBA" : "peepoShy"}`);
+}
+
+function wings(user) {
+    ComfyJS.Say(`@${user} -> Для того, чтобы получить крылья, вы должны купить 2 сабки ВО ВРЕМЯ стрима в категории GENSHIN IMPACT. Более подробную информацию можно узнать здесь: https://www.hoyolab.com/article/1413459`);
 }
 
 async function currentSong(user) {
