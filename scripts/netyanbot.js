@@ -21,6 +21,10 @@ ComfyJS.onRaid = (user, viewers, extra) => {
 
 var bearduckInterval = setInterval(() => {
     ComfyJS.Say("BearDuck");
+}, 60000 * 10);
+
+var wingsInterval = setInterval(() => {
+    ComfyJS.Say("/me ✿ Хочешь милые КФС крылья для геншина? Получи их за ДВЕ подарочные Тир 1 подписки или ОДНУ Тир 2/Тир 3 подписку! Более подробная информация здесь: https://www.hoyolab.com/article/1413459 ✿");
 }, 60000 * 15);
 
 async function biteUser(user1, user2) {
@@ -52,7 +56,7 @@ function hornyMeter(user) {
 }
 
 function wings(user) {
-    ComfyJS.Say(`@${user} -> /me ✿ Хочешь милые КФС крылья для геншина? Получи их за ДВЕ подарочные Тир 1 подписки или ОДНУ Тир 2/Тир 3 подписку! Более подробная информация здесь: https://www.hoyolab.com/article/1413459 ✿`);
+    ComfyJS.Say(`@${user} -> Для того, чтобы получить крылья, вы должны купить 2 сабки ВО ВРЕМЯ стрима в категории GENSHIN IMPACT. Более подробную информацию можно узнать здесь: https://www.hoyolab.com/article/1413459`);
 }
 
 async function currentSong(user) {
