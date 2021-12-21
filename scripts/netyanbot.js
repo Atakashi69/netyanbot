@@ -2,13 +2,13 @@ const TWITCHUSER = "netyann";
 const OAUTH = "oauth:xdcd4quhxig9fz77roxlop2fcvswcg";
 const rewardSongRequestID = "799efafa-9b2c-4c80-93fb-a6ed8659e66f";
 
-var bearduckLineCount = 0,
+var wobbleLineCount = 0,
     discordLineCount = 0;
 
 ComfyJS.Init(TWITCHUSER, OAUTH);
 
 ComfyJS.onChat = (user, command, message, flags, extra) =>  {
-    bearduckLineCount++;
+    wobbleLineCount++;
     discordLineCount++;
 };
 
@@ -29,7 +29,7 @@ ComfyJS.onRaid = (user, viewers, extra) => {
 
 var bearduckInterval = setInterval(() => {
     if (bearduckLineCount > 5) {
-        client.say(channel, "BearDuck");
+        client.say(channel, "netyanWobble");
         bearduckLineCount = 0;
     }
 }, 11 * 60 * 1000);
