@@ -2,16 +2,25 @@ const TWITCHUSER = "netyann";
 const OAUTH = "oauth:xdcd4quhxig9fz77roxlop2fcvswcg";
 const rewardSongRequestID = "799efafa-9b2c-4c80-93fb-a6ed8659e66f";
 
+var bearduckLineCount = 0,
+    discordLineCount = 0;
+
 ComfyJS.Init(TWITCHUSER, OAUTH);
+
+ComfyJS.onChat = (user, command, message, flags, extra) =>  {
+    bearduckLineCount++;
+    discordLineCount++;
+};
 
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "кусь" || command == "bite") {
         if (!message) biteRandomUser(user);
         else biteUser(user, message);
     }
-    if (command == "horny" || command == "хорни") hornyMeter(user);
-    if (command == "wings" || command == "крылья" || command == "kfc" || command == "кфс") wings(user);
-    if (command == "song") currentSong(user);
+    if (command == "онлифанс" || command == "onlyfans") ComfyJS.Say("https://clck.ru/3vyXS peepoShy");
+    if (command == "хорни" || command == "horny") hornyMeter(user);
+    if (command == "песня" || command == "song") currentSong(user);
+    if (command == "розыгрыш" || command == "giveaway") giveaway(user);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -19,12 +28,18 @@ ComfyJS.onRaid = (user, viewers, extra) => {
 };
 
 var bearduckInterval = setInterval(() => {
-    ComfyJS.Say("BearDuck");
-}, 60000 * 10);
+    if (bearduckLineCount > 5) {
+        client.say(channel, "BearDuck");
+        bearduckLineCount = 0;
+    }
+}, 11 * 60 * 1000);
 
-var wingsInterval = setInterval(() => {
-    ComfyJS.Say("/me ✿ Хочешь милые КФС крылья для геншина? Получи их за ДВЕ подарочные Тир 1 подписки или ОДНУ Тир 2/Тир 3 подписку! Более подробная информация здесь: https://www.hoyolab.com/article/1413459 ✿");
-}, 60000 * 15);
+var discordInterval = setInterval(() => {
+    if (discordLineCount > 5) {
+        client.say(channel, "✿ Не стесняйся вступать в мой Discord сервер ₍ᐢ..ᐢ₎♡ https://discord.gg/e8GW8CRj6a");
+        discordLineCount = 0;
+    }
+}, 23 * 60 * 1000);
 
 async function biteUser(user1, user2) {
     try {
@@ -49,13 +64,13 @@ async function biteRandomUser(user) {
     }
 }
 
+async function giveaway(user) {
+    ComfyJS.Say(`/me @${user} ✿На моём Discord сервере проходит розыгрыш четырех нитро! Заходи и участвуй: https://discord.com/invite/e8GW8CRj6a netyanAyaya`);
+}
+
 function hornyMeter(user) {
     var horny = Math.floor(Math.random() * 101);
     ComfyJS.Say(`${user} хорни на ${horny}% ${horny > 50 ? "BOOBA" : "peepoShy"}`);
-}
-
-function wings(user) {
-    ComfyJS.Say(`@${user} -> Для того, чтобы получить крылья, вы должны купить 2 сабки ВО ВРЕМЯ стрима в категории GENSHIN IMPACT. Более подробную информацию можно узнать здесь: https://www.hoyolab.com/article/1413459`);
 }
 
 async function currentSong(user) {
