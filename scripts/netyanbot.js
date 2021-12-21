@@ -27,10 +27,10 @@ ComfyJS.onRaid = (user, viewers, extra) => {
     ComfyJS.Say(`Спасибо за рейд! Всем рейдерам привет netyanAyayaka`);
 };
 
-var bearduckInterval = setInterval(() => {
-    if (bearduckLineCount > 5) {
+var wobbleInterval = setInterval(() => {
+    if (wobbleLineCount > 5) {
         client.say(channel, "netyanWobble");
-        bearduckLineCount = 0;
+        wobbleLineCount = 0;
     }
 }, 11 * 60 * 1000);
 
