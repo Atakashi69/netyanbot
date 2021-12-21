@@ -29,14 +29,14 @@ ComfyJS.onRaid = (user, viewers, extra) => {
 
 var wobbleInterval = setInterval(() => {
     if (wobbleLineCount > 5) {
-        client.say(channel, "netyanWobble");
+        ComfyJS.Say("netyanWobble");
         wobbleLineCount = 0;
     }
 }, 11 * 60 * 1000);
 
 var discordInterval = setInterval(() => {
     if (discordLineCount > 5) {
-        client.say(channel, "✿ Не стесняйся вступать в мой Discord сервер ₍ᐢ..ᐢ₎♡ https://discord.gg/e8GW8CRj6a");
+        ComfyJS.Say("✿ Не стесняйся вступать в мой Discord сервер ₍ᐢ..ᐢ₎♡ https://discord.gg/e8GW8CRj6a");
         discordLineCount = 0;
     }
 }, 23 * 60 * 1000);
