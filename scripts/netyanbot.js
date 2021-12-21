@@ -1,7 +1,6 @@
 const TWITCHUSER = "netyann";
 const OAUTH = "oauth:xdcd4quhxig9fz77roxlop2fcvswcg";
 const rewardSongRequestID = "799efafa-9b2c-4c80-93fb-a6ed8659e66f";
-//const rewardWishID = "ee2b066c-7dbe-4618-8f93-e42faaa29250";
 
 ComfyJS.Init(TWITCHUSER, OAUTH);
 
