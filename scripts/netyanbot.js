@@ -19,7 +19,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
-    ComfyJS.Say(`Спасибо за рейд! Всем рейдерам привет netyanAyayaka`);
+    ComfyJS.Say(`Спасибо за рейд! Всем рейдерам привет netyanAyaya`);
 };
 
 var wobbleInterval = setInterval(() => {
@@ -27,14 +27,14 @@ var wobbleInterval = setInterval(() => {
         ComfyJS.Say("netyanWobble");
         wobbleLineCount = 0;
     }
-}, /*11 **/ 60 * 1000);
+}, 11 * 60 * 1000);
 
 var discordInterval = setInterval(() => {
     if (discordLineCount > 5) {
         ComfyJS.Say("✿ Не стесняйся вступать в мой Discord сервер ₍ᐢ..ᐢ₎♡ https://discord.gg/e8GW8CRj6a");
         discordLineCount = 0;
     }
-}, /*23 **/ 60 * 1000);
+}, 23 * 60 * 1000);
 
 async function biteUser(user1, user2) {
     try {
