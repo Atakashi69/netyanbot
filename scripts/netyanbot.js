@@ -7,12 +7,6 @@ var wobbleLineCount = 0,
 
 ComfyJS.Init(TWITCHUSER, OAUTH);
 
-ComfyJS.onChat = (user, command, message, flags, extra) =>  {
-    wobbleLineCount++;
-    console.log(wobbleLineCount);
-    discordLineCount++;
-};
-
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "кусь" || command == "bite") {
         if (!message) biteRandomUser(user);
