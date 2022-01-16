@@ -9,6 +9,7 @@ ComfyJS.Init(TWITCHUSER, OAUTH);
 
 ComfyJS.onChat = (user, command, message, flags, extra) =>  {
     wobbleLineCount++;
+    console.log(wobbleLineCount);
     discordLineCount++;
 };
 
