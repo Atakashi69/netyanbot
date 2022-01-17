@@ -15,7 +15,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "онлифанс" || command == "onlyfans") ComfyJS.Say("https://clck.ru/3vyXS peepoShy");
     if (command == "хорни" || command == "horny") hornyMeter(user);
     if (command == "песня" || command == "song") currentSong(user);
-    if (command == "розыгрыш" || command == "giveaway") giveaway(user);
+    if (command == "котик" || command == "kitty") kittyMeter(user);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -59,13 +59,14 @@ async function biteRandomUser(user) {
     }
 }
 
-async function giveaway(user) {
-    ComfyJS.Say(`/me @${user} ✿На моём Discord сервере проходит розыгрыш четырех нитро! Заходи и участвуй: https://discord.com/invite/e8GW8CRj6a netyanAyaya`);
-}
-
 function hornyMeter(user) {
     var horny = Math.floor(Math.random() * 101);
     ComfyJS.Say(`${user} хорни на ${horny}% ${horny > 50 ? "BOOBA" : "peepoShy"}`);
+}
+    
+function kittyMeter(user) {
+    var kitty = Math.floor(Math.random() * 101);
+    ComfyJS.Say(`${user} ты котик на ${kitty}% netyanToptop`);
 }
 
 async function currentSong(user) {
