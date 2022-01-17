@@ -66,7 +66,7 @@ function hornyMeter(user) {
     
 function kittyMeter(user) {
     var kitty = Math.floor(Math.random() * 101);
-    ComfyJS.Say(`${user} ты котик на ${kitty}% netyanToptop`);
+    ComfyJS.Say(`${user} котик на ${kitty}% netyanToptop`);
 }
 
 async function currentSong(user) {
