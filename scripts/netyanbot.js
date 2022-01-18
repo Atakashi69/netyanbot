@@ -21,7 +21,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
-    ComfyJS.Say(`Спасибо за рейд! Всем рейдерам привет netyanAyaya`);
+    ComfyJS.Say("Добро пожаловать рейдерам канала "+user+"! (´｡• ᵕ •｡`) ♡");
 };
 
 var wobbleInterval = setInterval(() => {
