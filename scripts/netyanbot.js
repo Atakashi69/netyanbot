@@ -17,7 +17,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "песня" || command == "song") currentSong(user);
     if (command == "котик" || command == "kitty") kittyMeter(user);
     if (command == "розыгрыш" || command == "giveaway") giveaway();
-    if (command == "высадка") forRaid();
+    if (command == "высадка" && (flags.broadcaster || flags.mod)) forRaid();
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
