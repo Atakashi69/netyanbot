@@ -16,6 +16,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "хорни" || command == "horny") hornyMeter(user);
     if (command == "песня" || command == "song") currentSong(user);
     if (command == "котик" || command == "kitty") kittyMeter(user);
+    if (command == "розыгрыш" || command == "giveaway") giveaway();
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -67,6 +68,10 @@ function hornyMeter(user) {
 function kittyMeter(user) {
     var kitty = Math.floor(Math.random() * 101);
     ComfyJS.Say(`${user} котик на ${kitty}% netyanToptop`);
+}
+
+async function giveaway() {
+    ComfyJS.Say("Сегодня в 16:00 по мск будет разыгрываться Благословение Полой Луны/ сертификат в Стиме на 450 руб. (одно на выбор). Для участия необходимо быть фолловером моего канала, а также присутствовать на трансляции во время розыгрыша netyanYawn");
 }
 
 async function currentSong(user) {
