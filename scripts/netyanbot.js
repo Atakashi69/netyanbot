@@ -18,6 +18,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "котик" || command == "kitty") kittyMeter(user);
     if (command == "розыгрыш" || command == "giveaway") giveaway();
     if (command == "высадка" && (flags.broadcaster || flags.mod)) forRaid();
+    if (command == "чмоня") chmonyaMeter(user);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -69,6 +70,11 @@ function hornyMeter(user) {
 function kittyMeter(user) {
     var kitty = Math.floor(Math.random() * 101);
     ComfyJS.Say(`${user} котик на ${kitty}% netyanToptop`);
+}
+
+function chmonyaMeter(user) {
+    var chmonya = Math.floor(Math.random() * 101);
+    ComfyJS.Say(`${user} чмоня на ${chmonya}% netyanWobble`);
 }
 
 async function giveaway() {
