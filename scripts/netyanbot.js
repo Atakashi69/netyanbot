@@ -78,7 +78,7 @@ function chmonyaMeter(user) {
 }
 
 async function giveaway(user) {
-    ComfyJS.Say(`@${user} -> Как только наберётся 6к фолловеров, я устрою розыгрыш полой луны на своём стриме netyanYawn`);
+    ComfyJS.Say(`@${user} -> Как только на моем канале наберётся 6к фолловеров, я устрою розыгрыш Полой Луны на своём стриме netyanYawn`);
 }
 
 async function forRaid() {
