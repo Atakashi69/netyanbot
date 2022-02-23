@@ -77,7 +77,7 @@ function chmonyaMeter(user) {
     ComfyJS.Say(`${user} чмоня на ${chmonya}% netyanWobble`);
 }
 
-async function giveaway() {
+async function giveaway(user) {
     ComfyJS.Say(`@${user} -> Как только наберётся 6к фолловеров, я устрою розыгрыш полой луны на своём стриме netyanYawn`);
 }
 
