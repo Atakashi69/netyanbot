@@ -16,7 +16,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     if (command == "хорни" || command == "horny") hornyMeter(user);
     if (command == "песня" || command == "song") currentSong(user);
     if (command == "котик" || command == "kitty") kittyMeter(user);
-    if (command == "розыгрыш" || command == "giveaway") giveaway();
+    if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     if (command == "высадка") forRaid();
     if (command == "чмоня") chmonyaMeter(user);
 };
@@ -78,7 +78,7 @@ function chmonyaMeter(user) {
 }
 
 async function giveaway() {
-    ComfyJS.Say("Как только наберётся 6к фолловеров я устрою розыгрыш полой луны на своём стриме netyanYawn");
+    ComfyJS.Say(`@${user} -> Как только наберётся 6к фолловеров, я устрою розыгрыш полой луны на своём стриме netyanYawn`);
 }
 
 async function forRaid() {
