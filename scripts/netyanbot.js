@@ -25,12 +25,12 @@ ComfyJS.onRaid = (user, viewers, extra) => {
     ComfyJS.Say("Добро пожаловать рейдерам канала "+user+"! (´｡• ᵕ •｡`) ♡");
 };
 
-/*var wobbleInterval = setInterval(() => {
+var wobbleInterval = setInterval(() => {
     if (wobbleLineCount > 5) {
         ComfyJS.Say("netyanWobble");
         wobbleLineCount = 0;
     }
-}, 11 * 60 * 1000);*/
+}, 11 * 60 * 1000);
 
 var discordInterval = setInterval(() => {
     if (discordLineCount > 5) {
@@ -69,12 +69,12 @@ function hornyMeter(user) {
     
 function kittyMeter(user) {
     var kitty = Math.floor(Math.random() * 101);
-    ComfyJS.Say(`${user} котик на ${kitty}%`);
+    ComfyJS.Say(`${user} котик на ${kitty}% netyanToptop`);
 }
 
 function chmonyaMeter(user) {
     var chmonya = Math.floor(Math.random() * 101);
-    ComfyJS.Say(`${user} чмоня на ${chmonya}% BearDuck`);
+    ComfyJS.Say(`${user} чмоня на ${chmonya}% netyanWobble`);
 }
 
 /*async function giveaway(user) {
