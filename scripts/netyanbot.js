@@ -25,12 +25,12 @@ ComfyJS.onRaid = (user, viewers, extra) => {
     ComfyJS.Say("Добро пожаловать рейдерам канала "+user+"! (´｡• ᵕ •｡`) ♡");
 };
 
-var wobbleInterval = setInterval(() => {
+/*var wobbleInterval = setInterval(() => {
     if (wobbleLineCount > 5) {
         ComfyJS.Say("netyanWobble");
         wobbleLineCount = 0;
     }
-}, 11 * 60 * 1000);
+}, 11 * 60 * 1000);*/
 
 var discordInterval = setInterval(() => {
     if (discordLineCount > 5) {
@@ -69,17 +69,17 @@ function hornyMeter(user) {
     
 function kittyMeter(user) {
     var kitty = Math.floor(Math.random() * 101);
-    ComfyJS.Say(`${user} котик на ${kitty}% netyanToptop`);
+    ComfyJS.Say(`${user} котик на ${kitty}%`);
 }
 
 function chmonyaMeter(user) {
     var chmonya = Math.floor(Math.random() * 101);
-    ComfyJS.Say(`${user} чмоня на ${chmonya}% netyanWobble`);
+    ComfyJS.Say(`${user} чмоня на ${chmonya}% BearDuck`);
 }
 
-async function giveaway(user) {
+/*async function giveaway(user) {
     ComfyJS.Say(`@${user} -> Как только на моем канале наберётся 6к фолловеров, я устрою розыгрыш Полой Луны на своём стриме netyanYawn`);
-}
+}*/
 
 async function forRaid() {
     ComfyJS.Say("netyanToptop Высадка netyanToptop нетяновцев netyanToptop удалась netyanToptop");
