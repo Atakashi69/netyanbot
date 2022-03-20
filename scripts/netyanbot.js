@@ -3,7 +3,8 @@ const OAUTH = "oauth:xdcd4quhxig9fz77roxlop2fcvswcg";
 const rewardSongRequestID = "799efafa-9b2c-4c80-93fb-a6ed8659e66f";
 
 var wobbleLineCount = 0,
-    discordLineCount = 0;
+    discordLineCount = 0,
+    donateLineCount = 0;
 
 ComfyJS.Init(TWITCHUSER, OAUTH);
 
@@ -39,6 +40,12 @@ var discordInterval = setInterval(() => {
     }
 }, 23 * 60 * 1000);
 
+var donateInterval = setInterval(() => {
+    if (donateLineCount > 5) {
+        ConfyJS.Say("С помощью доната ты можешь поддержать стримера! netyanBearLove  https://www.donationalerts.com/r/netyann");
+        donateLineCount = 0;
+    }
+}, 30 * 60 * 1000);
 async function biteUser(user1, user2) {
     try {
         await (await fetch(`https://decapi.me/twitch/id/${user2}`)).text().then((id) => {
