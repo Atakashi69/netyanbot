@@ -18,8 +18,8 @@ async function fetchAsync(url) {
 
 ComfyJS.onChat = (user, message, flags, self, extra) => {
     wobbleLineCount++;
-    console.log(wobbleLineCount);
     discordLineCount++;
+    donateLineCount++;
     if (flags.customReward && extra.customRewardId === rewardSongRequestID) {
         var regExp = /youtube.com\S+|youtu.be\S+/;
         var filter = message.match(regExp);
