@@ -23,7 +23,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
-    ComfyJS.Say("Добро пожаловать рейдерам канала "+user+"! (´｡• ᵕ •｡`) ♡");
+    ComfyJS.Say("Добро пожаловать рейдерам канала " + user + "! (´｡• ᵕ •｡`) ♡");
 };
 
 var wobbleInterval = setInterval(() => {
@@ -42,10 +42,13 @@ var discordInterval = setInterval(() => {
 
 var donateInterval = setInterval(() => {
     if (donateLineCount > 5) {
-        ComfyJS.Say("С помощью доната ты можешь поддержать стримера! netyanBearLove  https://www.donationalerts.com/r/netyann");
+        ComfyJS.Say(
+            "С помощью доната ты можешь поддержать стримера! netyanBearLove  https://www.donationalerts.com/r/netyann"
+        );
         donateLineCount = 0;
     }
 }, 30 * 60 * 1000);
+
 async function biteUser(user1, user2) {
     try {
         await (await fetch(`https://decapi.me/twitch/id/${user2}`)).text().then((id) => {
@@ -73,7 +76,7 @@ function hornyMeter(user) {
     var horny = Math.floor(Math.random() * 101);
     ComfyJS.Say(`${user} хорни на ${horny}% ${horny > 50 ? "BOOBA" : "peepoShy"}`);
 }
-    
+
 function kittyMeter(user) {
     var kitty = Math.floor(Math.random() * 101);
     ComfyJS.Say(`${user} котик на ${kitty}% netyanToptop`);
