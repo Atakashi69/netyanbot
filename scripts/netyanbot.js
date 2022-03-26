@@ -14,12 +14,12 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         else biteUser(user, message);
     }
     if (command == "онлифанс" || command == "onlyfans") ComfyJS.Say("https://clck.ru/3vyXS peepoShy");
-    if (command == "хорни" || command == "horny") hornyMeter(user);
-    if (command == "песня" || command == "song") currentSong(user);
-    if (command == "котик" || command == "kitty") kittyMeter(user);
-    if (command == "розыгрыш" || command == "giveaway") giveaway(user);
-    if (command == "высадка") forRaid();
-    if (command == "чмоня") chmonyaMeter(user);
+    else if (command == "хорни" || command == "horny") hornyMeter(user);
+    else if (command == "песня" || command == "song") currentSong(user);
+    else if (command == "котик" || command == "kitty") kittyMeter(user);
+    else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
+    else if (command == "высадка") forRaid();
+    else if (command == "чмоня") chmonyaMeter(user);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -86,10 +86,6 @@ function chmonyaMeter(user) {
     var chmonya = Math.floor(Math.random() * 101);
     ComfyJS.Say(`${user} чмоня на ${chmonya}% netyanWobble`);
 }
-
-/*async function giveaway(user) {
-    ComfyJS.Say(`@${user} -> Как только на моем канале наберётся 6к фолловеров, я устрою розыгрыш Полой Луны на своём стриме netyanYawn`);
-}*/
 
 async function forRaid() {
     ComfyJS.Say("netyanToptop Высадка netyanToptop нетяновцев netyanToptop удалась netyanToptop");
