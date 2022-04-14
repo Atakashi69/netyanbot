@@ -16,19 +16,23 @@ async function fetchAsync(url) {
     }
 }
 
-var sinceLastKlee = 0, sinceLastKEKW = 0;
+var sinceLastKlee = 0, sinceLastKEKW = 0, sinceLastCatJAM = 0;
 ComfyJS.onChat = (user, message, flags, self, extra) => {
     wobbleLineCount++;
     discordLineCount++;
     donateLineCount++;
     
-    if (message == "KEKW" && (extra.timestamp - sinceLastKEKW) <= 100000) {
+    if (message == "KEKW" && (extra.timestamp - sinceLastKEKW) >= 100000) {
         ComfyJS.Say("KEKW");
         sinceLastKEKW = extra.timestamp;
     }
-    else if (message == "netyanKlee" && (extra.timestamp - sinceLastKlee) <= 100000) {
+    else if (message == "netyanKlee" && (extra.timestamp - sinceLastKlee) >= 100000) {
         ComfyJS.Say("netyanKlee");
         sinceLastKlee = extra.timestamp;
+    }
+    else if (message == "catJAM" && (extra.timestamp - sinceLastCatJAM) >= 100000) {
+        ComfyJS.Say("catJAM");
+        sinceLastCatJAM = extra.timestamp;
     }
     
     if (flags.customReward && extra.customRewardId === rewardSongRequestID) {
