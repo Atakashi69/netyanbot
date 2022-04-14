@@ -20,6 +20,7 @@ ComfyJS.onChat = (user, message, flags, self, extra) => {
     wobbleLineCount++;
     discordLineCount++;
     donateLineCount++;
+    console.log(extra.timestamp);
     if (flags.customReward && extra.customRewardId === rewardSongRequestID) {
         var regExp = /youtube.com\S+|youtu.be\S+/;
         var filter = message.match(regExp);
