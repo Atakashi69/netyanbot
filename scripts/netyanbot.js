@@ -35,7 +35,7 @@ var wobbleInterval = setInterval(() => {
 
 var discordInterval = setInterval(() => {
     if (discordLineCount > 5) {
-        ComfyJS.Say("/announce ✿ Не стесняйся вступать в мой Discord сервер ₍ᐢ..ᐢ₎♡ https://discord.gg/e8GW8CRj6a");
+        ComfyJS.Say("✿ Не стесняйся вступать в мой Discord сервер ₍ᐢ..ᐢ₎♡ https://discord.gg/e8GW8CRj6a");
         discordLineCount = 0;
     }
 }, 23 * 60 * 1000);
