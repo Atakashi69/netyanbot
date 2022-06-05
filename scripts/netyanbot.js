@@ -73,7 +73,9 @@ async function biteRandomUser(user) {
 }
 
 function hornyMeter(user) {
-    var horny = Math.floor(Math.random() * 101);
+    var horny = Math.floor(Math.random() * 202);
+    if (horny == 201) horny = 101;
+    else horny = Math.floor(horny / 2);
     ComfyJS.Say(`${user} хорни на ${horny}% ${horny > 50 ? "netyanHorny" : "peepoShy"}`);
 }
 
