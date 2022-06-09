@@ -99,7 +99,7 @@ async function currentSong(user) {
         await fetchAsync(
             `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${playlist[0]}&key=${GAPIKey}`
         ).then((result) => {
-            ComfyJS.Say(`@${user} -> ${result.items[0].snippet.title}`);
+            ComfyJS.Say(`@${user} -> ${result.items[0].snippet.title} (http://youtu.be/${playlist[0]})`);
         });
     } catch (e) {
         console.log(e);
