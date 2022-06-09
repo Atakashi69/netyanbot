@@ -19,7 +19,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     else if (command == "котик" || command == "kitty") kittyMeter(user);
     else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     else if (command == "высадка") forRaid();
-    else if (command == "чмоня") chmonyaMeter(user);
+    else if (command == "меч") swordMeter(user);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -84,9 +84,9 @@ function kittyMeter(user) {
     ComfyJS.Say(`${user} котик на ${kitty}% netyanToptop`);
 }
 
-function chmonyaMeter(user) {
-    var chmonya = Math.floor(Math.random() * 101);
-    ComfyJS.Say(`${user} чмоня на ${chmonya}% netyanWobble`);
+function swordMeter(user) {
+    var sword = Math.floor(Math.random() * 26);
+    ComfyJS.Say(`${user} длина твоего меча ${sword}см ${sword < 15 ? "AzusaLaugh" : "GIGACHAD"}`);
 }
 
 async function forRaid() {
