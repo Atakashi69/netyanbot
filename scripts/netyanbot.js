@@ -15,7 +15,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     }
     if (command == "онлифанс" || command == "onlyfans") ComfyJS.Say("https://clck.ru/3vyXS peepoShy");
     else if (command == "хорни" || command == "horny") hornyMeter(user);
-    else if (command == "песня" || command == "song") currentSong(user);
+    else if (command == "песня" || command == "song" || command == "track" || command == "трек") currentSong(user);
     else if (command == "котик" || command == "kitty") kittyMeter(user);
     else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     else if (command == "высадка") forRaid();
