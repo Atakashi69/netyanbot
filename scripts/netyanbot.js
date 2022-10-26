@@ -90,7 +90,7 @@ function swordMeter(user) {
 }
 
 async function forRaid() {
-    ComfyJS.Say("netyanToptop Высадка netyanToptop нетяновцев netyanToptop удалась netyanToptop");
+    ComfyJS.Say("netyanToptop Атака netyanToptop титяновцев netyanToptop удалась netyanToptop");
 }
 
 async function currentSong(user) {
