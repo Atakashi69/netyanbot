@@ -20,6 +20,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     else if (command == "высадка") forRaid();
     else if (command == "меч") swordMeter(user);
+    else if (command == "love") loveMeter(user, message);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -65,6 +66,19 @@ async function biteRandomUser(user) {
     try {
         await (await fetch(`https://decapi.me/twitch/random_user/${TWITCHUSER}`)).text().then((randomUser) => {
             ComfyJS.Say(`${user} укусил(а) за ушко @${randomUser} AzusaLaugh`);
+        });
+    } catch (e) {
+        console.log(e);
+        throw e;
+    }
+}
+
+async function loveMeter(user1, user2) {
+    try {
+        await (await fetch(`https://decapi.me/twitch/id/${user2}`)).text().then((id) => {
+            console.log(id);
+            if (id != "404 Page Not Found")
+                ComfyJS.Say(`${user1} любит ${user2} на ${Math.floor(Math.random() * 101)} AzusaLaugh`);
         });
     } catch (e) {
         console.log(e);
