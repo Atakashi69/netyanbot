@@ -74,16 +74,7 @@ async function biteRandomUser(user) {
 }
 
 async function loveMeter(user1, user2) {
-    try {
-        await (await fetch(`https://decapi.me/twitch/id/${user2}`)).text().then((id) => {
-            console.log(id);
-            if (id != "404 Page Not Found")
-                ComfyJS.Say(`${user1} любит ${user2} на ${Math.floor(Math.random() * 101)}%`);
-        });
-    } catch (e) {
-        console.log(e);
-        throw e;
-    }
+    ComfyJS.Say(`${user1} любит ${user2} на ${Math.floor(Math.random() * 101)}%`);
 }
 
 function hornyMeter(user) {
