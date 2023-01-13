@@ -120,7 +120,7 @@ async function oldMeter(user) {
             if (word.includes("day")) k += num;
         })
         console.log(k);
-        ComfyJS.Say(`${user} олд на ${Math.round((k / streamDuration) * 100)}%`);
+        ComfyJS.Say(`@${user} олд на ${Math.round((k / streamDuration) * 100)}%`);
     });
 }
 
