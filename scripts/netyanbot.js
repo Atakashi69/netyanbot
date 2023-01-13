@@ -21,6 +21,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     else if (command == "высадка") forRaid();
     else if (command == "меч") swordMeter(user);
     else if (command == "love") loveMeter(user, message);
+    else if (command == "old" || command == "олд") oldMeter(user);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -92,6 +93,32 @@ function kittyMeter(user) {
 function swordMeter(user) {
     var sword = Math.floor(Math.random() * 26);
     ComfyJS.Say(`${user} длина твоего меча ${sword}см ${sword < 15 ? "AzusaLaugh" : "GIGACHAD"}`);
+}
+
+function dayDiff(d1, d2) {
+    var days = (d2.getFullYear() - d1.getFullYear()) * 365;
+    days = days - d1.getDay() + d2.getDay();
+    return days <= 0 ? 0 : days;
+}
+
+async function oldMeter(user) {
+    var startDate = new Date("2020-06-01");
+    var streamDuration = dayDiff(startDate, new Date());
+    fetch(`https://beta.decapi.me/twitch/followage/netyann/${user}`).then(response => response.text()).then(result => {
+        var followDuration = result;
+        var arr = followDuration.split(", ");
+        var k = 0;
+        arr.forEach(e => {
+            var num = Number(e.split(" ")[0]);
+            var word = e.split(" ")[1];
+            if (word.includes("year")) k += num * 365;
+            if (word.includes("month")) k += num * 30;
+            if (word.includes("week")) k += num * 7;
+            if (word.includes("day")) k += num;
+        })
+    });
+    
+    ComfyJS.Say("@$(user) олд на " + Math.round((k / streamDuration) * 100) + "%");
 }
 
 async function forRaid() {
