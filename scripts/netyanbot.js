@@ -107,7 +107,7 @@ function dayDiff(a, b) {
 async function oldMeter(user) {
     var startDate = new Date("2020-06-01");
     var streamDuration = dayDiff(startDate, new Date());
-    fetch(`https://beta.decapi.me/twitch/followage/netyann/${user}`).then(response => response.text()).then(result => {
+    fetch(`https://beta.decapi.me/twitch/followage/netyann/${user}?precision=4`).then(response => response.text()).then(result => {
         var followDuration = result;
         var arr = followDuration.split(", ");
         var k = 0;
