@@ -45,7 +45,7 @@ var discordInterval = setInterval(() => {
 var donateInterval = setInterval(() => {
     if (donateLineCount > 5) {
         ComfyJS.Say(
-            "С помощью доната ты можешь поддержать стримера! netyanBearLove  https://www.donationalerts.com/r/netyann"
+            "С помощью доната ты можешь поддержать стримера! netyanKuromiLove https://www.donationalerts.com/r/netyann"
         );
         donateLineCount = 0;
     }
