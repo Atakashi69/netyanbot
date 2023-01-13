@@ -115,10 +115,9 @@ async function oldMeter(user) {
             if (word.includes("month")) k += num * 30;
             if (word.includes("week")) k += num * 7;
             if (word.includes("day")) k += num;
-        })
+        })  
+        ComfyJS.Say("@$(user) олд на " + Math.round((k / streamDuration) * 100) + "%");
     });
-    
-    ComfyJS.Say("@$(user) олд на " + Math.round((k / streamDuration) * 100) + "%");
 }
 
 async function forRaid() {
