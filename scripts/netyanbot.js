@@ -95,10 +95,13 @@ function swordMeter(user) {
     ComfyJS.Say(`${user} длина твоего меча ${sword}см ${sword < 15 ? "AzusaLaugh" : "GIGACHAD"}`);
 }
 
-function dayDiff(d1, d2) {
-    var days = (d2.getFullYear() - d1.getFullYear()) * 365;
-    days = days - d1.getDay() + d2.getDay();
-    return days <= 0 ? 0 : days;
+function dayDiff(a, b) {
+  const _MS_PER_DAY = 1000 * 60 * 60 * 24;
+  // Discard the time and time-zone information.
+  const utc1 = Date.UTC(a.getFullYear(), a.getMonth(), a.getDate());
+  const utc2 = Date.UTC(b.getFullYear(), b.getMonth(), b.getDate());
+
+  return Math.floor((utc2 - utc1) / _MS_PER_DAY);
 }
 
 async function oldMeter(user) {
@@ -115,8 +118,9 @@ async function oldMeter(user) {
             if (word.includes("month")) k += num * 30;
             if (word.includes("week")) k += num * 7;
             if (word.includes("day")) k += num;
-        })  
-        ComfyJS.Say("@$(user) олд на " + Math.round((k / streamDuration) * 100) + "%");
+        })
+        console.log(k);
+        ComfyJS.Say(`${user} олд на ${Math.round((k / streamDuration) * 100)}%`);
     });
 }
 
