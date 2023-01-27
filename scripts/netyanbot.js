@@ -20,7 +20,10 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     else if (command == "высадка") forRaid();
     else if (command == "меч") swordMeter(user);
-    else if (command == "love") loveMeter(user, message);
+    else if (command == "love") {
+        if (!message) loveRandomUser(user);
+        else loveMeter(user, message);
+    }
     else if (command == "old" || command == "олд") oldMeter(user);
 };
 
@@ -78,10 +81,19 @@ async function loveMeter(user1, user2) {
     ComfyJS.Say(`${user1} любит ${user2} на ${Math.floor(Math.random() * 101)}%`);
 }
 
+async function loveRandomUser(user) {
+    try {
+        await (await fetch(`https://decapi.me/twitch/random_user/${TWITCHUSER}`)).text().then((randomUser) => {
+            ComfyJS.Say(`${user} любит @${randomUser} ${Math.floor(Math.random() * 101)}%`);
+        });
+    } catch (e) {
+        console.log(e);
+        throw e;
+    }
+}
+
 function hornyMeter(user) {
-    var horny = Math.floor(Math.random() * 202);
-    if (horny == 201) horny = 101;
-    else horny = Math.floor(horny / 2);
+    var horny = Math.floor(Math.random() * 102);
     ComfyJS.Say(`${user} хорни на ${horny}% ${horny > 50 ? "netyanHorny" : "peepoShy"}`);
 }
 
