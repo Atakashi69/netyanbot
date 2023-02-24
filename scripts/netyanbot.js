@@ -24,6 +24,10 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         if (!message) loveRandomUser(user);
         else loveMeter(user, message);
     }
+    else if (command == "hate") {
+        if (!message) hateRandomUser(user);
+        else hateMeter(user, message);
+    }
     else if (command == "old" || command == "олд") oldMeter(user);
 };
 
@@ -85,6 +89,21 @@ async function loveRandomUser(user) {
     try {
         await (await fetch(`https://decapi.me/twitch/random_user/${TWITCHUSER}`)).text().then((randomUser) => {
             ComfyJS.Say(`${user} любит @${randomUser} ${Math.floor(Math.random() * 101)}%`);
+        });
+    } catch (e) {
+        console.log(e);
+        throw e;
+    }
+}
+
+async function hateMeter(user1, user2) {
+    ComfyJS.Say(`${user1} хейтит ${user2} на ${Math.floor(Math.random() * 101)}% netyanAngry`);
+}
+
+async function hateRandomUser(user) {
+    try {
+        await (await fetch(`https://decapi.me/twitch/random_user/${TWITCHUSER}`)).text().then((randomUser) => {
+            ComfyJS.Say(`${user} хейтит @${randomUser} ${Math.floor(Math.random() * 101)}% netyanAngry`);
         });
     } catch (e) {
         console.log(e);
