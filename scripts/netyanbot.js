@@ -24,7 +24,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         if (!message) loveRandomUser(user);
         else loveMeter(user, message);
     }
-    else if (command == "hate") {
+    else if (command == "hate" || command == "хейт") {
         if (!message) hateRandomUser(user);
         else hateMeter(user, message);
     }
