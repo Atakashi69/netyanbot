@@ -20,14 +20,8 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     else if (command == "высадка") forRaid();
     else if (command == "меч") swordMeter(user);
-    else if (command == "love") {
-        if (!message) loveRandomUser(user);
-        else loveMeter(user, message);
-    }
-    else if (command == "hate" || command == "хейт") {
-        if (!message) hateRandomUser(user);
-        else hateMeter(user, message);
-    }
+    else if (command == "love") loveMeter(user, message);
+    else if (command == "hate" || command == "хейт") hateMeter(user, message);
     else if (command == "old" || command == "олд") oldMeter(user);
 };
 
@@ -70,45 +64,12 @@ async function biteUser(user1, user2) {
     }
 }
 
-async function biteRandomUser(user) {
-    try {
-        await (await fetch(`https://decapi.me/twitch/random_user/${TWITCHUSER}`)).text().then((randomUser) => {
-            ComfyJS.Say(`${user} укусил(а) за ушко @${randomUser} AzusaLaugh`);
-        });
-    } catch (e) {
-        console.log(e);
-        throw e;
-    }
-}
-
 async function loveMeter(user1, user2) {
     ComfyJS.Say(`${user1} любит ${user2} на ${Math.floor(Math.random() * 101)}%`);
 }
 
-async function loveRandomUser(user) {
-    try {
-        await (await fetch(`https://decapi.me/twitch/random_user/${TWITCHUSER}`)).text().then((randomUser) => {
-            ComfyJS.Say(`${user} любит @${randomUser} ${Math.floor(Math.random() * 101)}%`);
-        });
-    } catch (e) {
-        console.log(e);
-        throw e;
-    }
-}
-
 async function hateMeter(user1, user2) {
     ComfyJS.Say(`${user1} хейтит ${user2} на ${Math.floor(Math.random() * 101)}% netyanAngry`);
-}
-
-async function hateRandomUser(user) {
-    try {
-        await (await fetch(`https://decapi.me/twitch/random_user/${TWITCHUSER}`)).text().then((randomUser) => {
-            ComfyJS.Say(`${user} хейтит @${randomUser} ${Math.floor(Math.random() * 101)}% netyanAngry`);
-        });
-    } catch (e) {
-        console.log(e);
-        throw e;
-    }
 }
 
 function hornyMeter(user) {
