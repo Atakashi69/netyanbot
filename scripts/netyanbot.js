@@ -9,19 +9,19 @@ var wobbleLineCount = 0,
 ComfyJS.Init(TWITCHUSER, OAUTH);
 
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
-    if (command == "кусь" || command == "bite") {
-        if (!message) biteRandomUser(user);
-        else biteUser(user, message);
-    }
-    if (command == "онлифанс" || command == "onlyfans") ComfyJS.Say("https://clck.ru/3vyXS peepoShy");
+    if (command == "кусь" || command == "bite")
+        if (message) biteUser(user, message);
+    else if (command == "онлифанс" || command == "onlyfans") ComfyJS.Say("https://clck.ru/3vyXS peepoShy");
     else if (command == "хорни" || command == "horny") hornyMeter(user);
     else if (command == "песня" || command == "song" || command == "track" || command == "трек") currentSong(user);
     else if (command == "котик" || command == "kitty") kittyMeter(user);
     else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     else if (command == "высадка") forRaid();
     else if (command == "меч") swordMeter(user);
-    else if (command == "love") loveMeter(user, message);
-    else if (command == "hate" || command == "хейт") hateMeter(user, message);
+    else if (command == "love")
+        if (message) loveMeter(user, message);
+    else if (command == "hate" || command == "хейт")
+        if (message) hateMeter(user, message);
     else if (command == "old" || command == "олд") oldMeter(user);
 };
 
