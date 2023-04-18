@@ -9,6 +9,7 @@ var wobbleLineCount = 0,
 ComfyJS.Init(TWITCHUSER, OAUTH);
 
 ComfyJS.onCommand = (user, command, message, flags, extra) => {
+    console.log(user, command, message);
     if (command == "кусь" || command == "bite")
         if (message) biteUser(user, message);
     else if (command == "онлифанс" || command == "onlyfans") ComfyJS.Say("https://clck.ru/3vyXS peepoShy");
