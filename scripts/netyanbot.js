@@ -2,8 +2,7 @@ const TWITCHUSER = "netyann";
 const OAUTH = "oauth:xdcd4quhxig9fz77roxlop2fcvswcg";
 const rewardSongRequestID = "799efafa-9b2c-4c80-93fb-a6ed8659e66f";
 
-var wobbleLineCount = 0,
-    discordLineCount = 0,
+var discordLineCount = 0,
     donateLineCount = 0;
 
 ComfyJS.Init(TWITCHUSER, OAUTH);
@@ -36,13 +35,6 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
 ComfyJS.onRaid = (user, viewers, extra) => {
     ComfyJS.Say("Добро пожаловать рейдерам канала " + user + "! (´｡• ᵕ •｡`) ♡");
 };
-
-var wobbleInterval = setInterval(() => {
-    if (wobbleLineCount > 5) {
-        ComfyJS.Say("netyanWobble");
-        wobbleLineCount = 0;
-    }
-}, 11 * 60 * 1000);
 
 var discordInterval = setInterval(() => {
     if (discordLineCount > 5) {
