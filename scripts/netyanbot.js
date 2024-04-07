@@ -20,6 +20,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
     else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     else if (command == "высадка") forRaid();
     else if (command == "меч") swordMeter(user);
+    else if (command == "iq") iqMeter(user);
     else if (command == "love") {
         if (message)
             loveMeter(user, message);
@@ -28,8 +29,8 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         if (message)
             hateMeter(user, message);
     }
-    else if (command == "old" || command == "олд")
-        oldMeter(user);
+    /*else if (command == "old" || command == "олд")
+        oldMeter(user);*/
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -85,6 +86,11 @@ function kittyMeter(user) {
 function swordMeter(user) {
     var sword = Math.floor(Math.random() * 26);
     ComfyJS.Say(`${user} длина твоего меча ${sword}см ${sword < 15 ? "AzusaLaugh" : "GIGACHAD"}`);
+}
+
+function iqMeter(user) {
+    var iq = Math.floor(Math.random() * 186);
+    ComfyJS.Say(`${user} твое iq ${iq}%`);
 }
 
 function dayDiff(a, b) {
