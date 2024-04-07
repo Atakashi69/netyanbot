@@ -57,7 +57,7 @@ async function biteUser(user1, user2) {
     try {
         await (await fetch(`https://decapi.me/twitch/id/${user2}`)).text().then((id) => {
             console.log(id);
-            if (id != "404 Page Not Found") ComfyJS.Say(`${user1} укусил(а) за ушко ${user2} AzusaLaugh`);
+            if (id != "404 Page Not Found") ComfyJS.Say(`${user1} укусил(а) за ушко ${user2} netyanKycb `);
         });
     } catch (e) {
         console.log(e);
@@ -66,7 +66,7 @@ async function biteUser(user1, user2) {
 }
 
 async function loveMeter(user1, user2) {
-    ComfyJS.Say(`${user1} любит ${user2} на ${Math.floor(Math.random() * 101)}%`);
+    ComfyJS.Say(`${user1} любит ${user2} на ${Math.floor(Math.random() * 101)}% netyanHeart2`);
 }
 
 async function hateMeter(user1, user2) {
@@ -90,7 +90,7 @@ function swordMeter(user) {
 
 function iqMeter(user) {
     var iq = Math.floor(Math.random() * 186);
-    ComfyJS.Say(`${user} твое iq ${iq}%`);
+    ComfyJS.Say(`${user} твое iq ${iq}`);
 }
 
 function dayDiff(a, b) {
