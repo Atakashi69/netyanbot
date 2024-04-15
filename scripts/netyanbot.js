@@ -90,7 +90,7 @@ function swordMeter(user) {
 
 function iqMeter(user) {
     var iq = Math.floor(Math.random() * 186);
-    ComfyJS.Say(`${user} твое iq ${iq}`);
+    ComfyJS.Say(`${user} твой iq ${iq}`);
 }
 
 function dayDiff(a, b) {
