@@ -13,7 +13,7 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         if (message)
             biteUser(user, message);
     }
-    else if (command == "онлифанс" || command == "onlyfans") ComfyJS.Say("https://boosty.to/netyann netyanLegs");
+    else if (command == "онлифанс" || command == "onlyfans" || command == "boosty" || command == "бусти" || command == "онлик") ComfyJS.Say("https://boosty.to/netyann netyanLegs");
     else if (command == "хорни" || command == "horny") hornyMeter(user);
     else if (command == "песня" || command == "song" || command == "track" || command == "трек") currentSong(user);
     else if (command == "котик" || command == "kitty") kittyMeter(user);
