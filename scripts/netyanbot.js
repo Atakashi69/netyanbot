@@ -13,11 +13,8 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         if (message)
             biteUser(user, message);
     }
-    else if (command == "онлифанс" || command == "onlyfans" || command == "boosty" || command == "бусти" || command == "онлик") ComfyJS.Say("https://boosty.to/netyann netyanLegs");
     else if (command == "хорни" || command == "horny") hornyMeter(user);
-    else if (command == "песня" || command == "song" || command == "track" || command == "трек") currentSong(user);
     else if (command == "котик" || command == "kitty") kittyMeter(user);
-    else if (command == "розыгрыш" || command == "giveaway") giveaway(user);
     else if (command == "высадка") forRaid();
     else if (command == "меч") swordMeter(user);
     else if (command == "iq") iqMeter(user);
@@ -70,12 +67,12 @@ async function loveMeter(user1, user2) {
 }
 
 async function hateMeter(user1, user2) {
-    ComfyJS.Say(`${user1} хейтит ${user2} на ${Math.floor(Math.random() * 101)}% netyanAngry`);
+    ComfyJS.Say(`${user1} хейтит ${user2} на ${Math.floor(Math.random() * 101)}% netyanDislike`);
 }
 
 function hornyMeter(user) {
     var horny = Math.floor(Math.random() * 102);
-    ComfyJS.Say(`${user} хорни на ${horny}% ${horny > 50 ? "netyanHorny" : "peepoShy"}`);
+    ComfyJS.Say(`${user} хорни на ${horny}% ${horny > 50 ? "netyanWink" : "peepoShy"}`);
 }
 
 function kittyMeter(user) {
