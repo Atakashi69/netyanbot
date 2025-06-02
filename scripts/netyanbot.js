@@ -30,11 +30,11 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         oldMeter(user);*/
 };
 
-ComfyJS.onRaid = (user, viewers, extra) => {
+/*ComfyJS.onRaid = (user, viewers, extra) => {
     ComfyJS.Say("Добро пожаловать рейдерам канала " + user + "! (´｡• ᵕ •｡`) ♡");
-};
+};*/
 
-var discordInterval = setInterval(() => {
+/*var discordInterval = setInterval(() => {
     if (discordLineCount > 5) {
         ComfyJS.Say("✿ Не стесняйся вступать в мой Discord сервер ₍ᐢ..ᐢ₎♡ https://discord.gg/e8GW8CRj6a");
         discordLineCount = 0;
@@ -48,11 +48,11 @@ var donateInterval = setInterval(() => {
         );
         donateLineCount = 0;
     }
-}, 30 * 60 * 1000);
+}, 30 * 60 * 1000);*/
 
-async function getRandomChatter(TWITCHUSER) {
+async function getRandomChatter(channel) {
     try {
-        const response = await fetch(`https://commands.garretcharp.com/twitch/chatter/${TWITCHUSER}`);
+        const response = await fetch(`https://commands.garretcharp.com/twitch/chatter/${channel}`);
         const data = await response.json();
         
         if (!data.chatters || data.chatters.length === 0) {
