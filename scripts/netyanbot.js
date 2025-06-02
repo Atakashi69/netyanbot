@@ -26,8 +26,8 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         if (message)
             hateMeter(user, message);
     }
-    /*else if (command == "old" || command == "олд")
-        oldMeter(user);*/
+    else if (command == "old" || command == "олд")
+        oldMeter(user);
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
