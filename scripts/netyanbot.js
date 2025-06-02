@@ -26,8 +26,8 @@ ComfyJS.onCommand = (user, command, message, flags, extra) => {
         if (message)
             hateMeter(user, message);
     }
-    else if (command == "old" || command == "олд")
-        oldMeter(user);
+    /*else if (command == "old" || command == "олд")
+        oldMeter(user);*/
 };
 
 ComfyJS.onRaid = (user, viewers, extra) => {
@@ -50,6 +50,40 @@ var donateInterval = setInterval(() => {
     }
 }, 30 * 60 * 1000);
 
+async function getRandomChatter(TWITCHUSER) {
+    try {
+        const response = await fetch(`https://commands.garretcharp.com/twitch/chatter/${TWITCHUSER}`);
+        const data = await response.json();
+        
+        if (!data.chatters || data.chatters.length === 0) {
+            return null;
+        }
+        return data.chatters[Math.floor(Math.random() * data.chatters.length)];
+    } catch (error) {
+        console.error("Ошибка при получении списка зрителей:", error);
+        return null;
+    }
+}
+
+async function loveMeter(user1) {
+    const channel = "netyann";
+    const randomUser = await getRandomChatter(channel);
+    
+    const targetUser = (randomUser === user1) ? "самого себя" : randomUser;
+    const lovePercent = Math.floor(Math.random() * 101);
+    
+    ComfyJS.Say(`${user1} любит ${targetUser} на ${lovePercent}% netyanHeart2`);
+}
+
+//async function loveMeter(user1, user2) {
+//    const randomUser = possibleTargets[Math.floor(Math.random() * possibleTargets.length)];
+//    var lovePercent = Math.floor(Math.random() * 101);
+
+//    ComfyJS.Say(`${user1} любит ${randomUser} на ${lovePercent}% netyanHeart2`);
+//    //ComfyJS.Say(`${user1} любит ${randomUser} на ${Math.floor(Math.random() * 101)}% netyanHeart2`);
+//}
+
+
 async function biteUser(user1, user2) {
     try {
         await (await fetch(`https://decapi.me/twitch/id/${user2}`)).text().then((id) => {
@@ -60,10 +94,6 @@ async function biteUser(user1, user2) {
         console.log(e);
         throw e;
     }
-}
-
-async function loveMeter(user1, user2) {
-    ComfyJS.Say(`${user1} любит ${user2} на ${Math.floor(Math.random() * 101)}% netyanHeart2`);
 }
 
 async function hateMeter(user1, user2) {
